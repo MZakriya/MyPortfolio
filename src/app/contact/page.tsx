@@ -58,7 +58,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 text-white px-6 py-22 flex flex-col items-center">
       <motion.h1
-        className="text-4xl font-bold text-center mb-8"
+        className="text-4xl md:text-5xl font-bold text-center mb-8"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -68,13 +68,13 @@ const Contact = () => {
 
       <motion.form
         onSubmit={handleSubmit}
-        className="w-full max-w-lg bg-gray-800 p-6 rounded-lg shadow-lg"
+        className="w-full max-w-lg bg-gray-800 p-6 rounded-lg shadow-lg space-y-4"
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="mb-4">
-          <label className="block text-gray-300">Name</label>
+        <div>
+          <label className="block text-gray-300 mb-1">Name</label>
           <input
             type="text"
             name="name"
@@ -85,8 +85,8 @@ const Contact = () => {
           />
         </div>
 
-        <div className="mb-4">
-          <label className="block text-gray-300">Email</label>
+        <div>
+          <label className="block text-gray-300 mb-1">Email</label>
           <input
             type="email"
             name="email"
@@ -97,8 +97,8 @@ const Contact = () => {
           />
         </div>
 
-        <div className="mb-4">
-          <label className="block text-gray-300">Message</label>
+        <div>
+          <label className="block text-gray-300 mb-1">Message</label>
           <textarea
             name="message"
             value={formData.message}
@@ -109,8 +109,8 @@ const Contact = () => {
           />
         </div>
 
-        <div className="mb-4">
-          <label className="block text-gray-300">Upload File (Optional)</label>
+        <div>
+          <label className="block text-gray-300 mb-1">Upload File (Optional)</label>
           <input
             type="file"
             name="file"
@@ -122,26 +122,26 @@ const Contact = () => {
         <Button
           type="submit"
           variant="primary"
-          className="w-full"
+          className="w-full mt-4"
           disabled={loading}
         >
           {loading ? "Sending..." : "Send Message"}
         </Button>
 
         {success && (
-          <p className="mt-4 text-green-400">Message sent successfully!</p>
+          <p className="mt-4 text-green-400 text-center">Message sent successfully!</p>
         )}
       </motion.form>
 
       {/* Social Links with Icons */}
-      <div className="mt-8 flex gap-4 flex-wrap">
+      <div className="mt-8 flex gap-4 flex-wrap justify-center">
         <Link
           href="https://www.linkedin.com/in/muhammad-zakriya-2a6788347/"
           target="_blank"
           className="flex items-center gap-2 bg-gray-800 text-blue-400 hover:text-white px-4 py-2 rounded-lg shadow-md transition-all"
         >
-          <FaLinkedin size={24} />
-          <span>LinkedIn</span>
+          <FaLinkedin size={20} />
+          LinkedIn
         </Link>
 
         <Link
@@ -149,8 +149,8 @@ const Contact = () => {
           target="_blank"
           className="flex items-center gap-2 bg-gray-800 text-gray-400 hover:text-white px-4 py-2 rounded-lg shadow-md transition-all"
         >
-          <FaGithub size={24} />
-          <span>GitHub</span>
+          <FaGithub size={20} />
+          GitHub
         </Link>
 
         <Link
@@ -158,16 +158,16 @@ const Contact = () => {
           target="_blank"
           className="flex items-center gap-2 bg-gray-800 text-green-400 hover:text-white px-4 py-2 rounded-lg shadow-md transition-all"
         >
-          <FaWhatsapp size={24} />
-          <span>WhatsApp</span>
+          <FaWhatsapp size={20} />
+          WhatsApp
         </Link>
 
         <Link
           href="tel:+923162558058"
           className="flex items-center gap-2 bg-gray-800 text-yellow-400 hover:text-white px-4 py-2 rounded-lg shadow-md transition-all"
         >
-          <FaPhone size={24} />
-          <span>Call Now</span>
+          <FaPhone size={20} />
+          Call Now
         </Link>
       </div>
     </div>

@@ -29,20 +29,29 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       whileHover={{ scale: 1.05 }}
       transition={{ duration: 0.3 }}
     >
-      <Image
-        src={imageUrl}
-        alt={title}
-        className="w-full h-40 object-cover rounded-md mb-4"
-      />
+      {/* Optimized Image */}
+      <div className="relative w-full h-40 mb-4 rounded-md overflow-hidden">
+        <Image
+          src={imageUrl}
+          alt={`Project - ${title}`}
+          layout="fill"
+          objectFit="cover"
+          className="rounded-md"
+        />
+      </div>
       <h2 className="text-2xl font-semibold mb-2">{title}</h2>
       <p className="text-gray-300 mb-2">{description}</p>
       <p className="text-gray-400 mb-4">Tech Stack: {techStack}</p>
       <div className="flex gap-4">
         <Button asChild variant="outline" className="text-blue-400 border-blue-400">
-          <Link href={liveLink} target="_blank">Live Demo</Link>
+          <Link href={liveLink} target="_blank" rel="noopener noreferrer">
+            Live Demo
+          </Link>
         </Button>
         <Button asChild variant="outline" className="text-green-400 border-green-400">
-          <Link href={githubLink} target="_blank">GitHub</Link>
+          <Link href={githubLink} target="_blank" rel="noopener noreferrer">
+            GitHub
+          </Link>
         </Button>
       </div>
     </motion.div>
