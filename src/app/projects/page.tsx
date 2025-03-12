@@ -74,27 +74,51 @@ const projects = [
 const Projects = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 text-white px-6 py-22">
+      {/* Animated Heading */}
       <motion.h1
-        className="text-4xl md:text-5xl font-bold text-center mb-8"
-        initial={{ opacity: 0, y: -20 }}
+        className="text-5xl font-extrabold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400"
+        initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 1 }}
       >
         Projects Showcase
       </motion.h1>
-      <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center">
+
+      {/* Animated Projects Grid */}
+      <motion.div
+        className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { opacity: 0, y: 20 },
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              staggerChildren: 0.2,
+              duration: 0.6,
+            },
+          },
+        }}
+      >
         {projects.map((project, index) => (
-          <ProjectCard
+          <motion.div
             key={index}
-            title={project.title}
-            description={project.description}
-            techStack={project.techStack}
-            liveLink={project.liveLink}
-            githubLink={project.githubLink}
-            imageUrl={project.imageUrl}
-          />
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+            className="transform transition-all duration-300"
+          >
+            <ProjectCard
+              title={project.title}
+              description={project.description}
+              techStack={project.techStack}
+              liveLink={project.liveLink}
+              githubLink={project.githubLink}
+              imageUrl={project.imageUrl}
+            />
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };
