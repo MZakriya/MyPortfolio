@@ -35,7 +35,7 @@ export default function About() {
       >
         {[
           "Next.js", "React.js", "TypeScript", "Tailwind CSS", "Framer Motion",
-          "Node.js", "Express.js", "REST APIs", 
+          "Node.js", "Express.js", "REST APIs", "Streamlit", "Python", "Git", "GitHub", "VS Code",
         ].map((skill, index) => (
           <div
             key={index}
