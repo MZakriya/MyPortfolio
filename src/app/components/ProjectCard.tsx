@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "../components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 
 interface ProjectCardProps {
   title: string;
@@ -28,7 +29,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       whileHover={{ scale: 1.05 }}
       transition={{ duration: 0.3 }}
     >
-      <img
+      <Image
         src={imageUrl}
         alt={title}
         className="w-full h-40 object-cover rounded-md mb-4"

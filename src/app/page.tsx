@@ -15,7 +15,7 @@ export default function Home() {
           transition={{ duration: 1 }}
           className="text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400"
         >
-          Hi, I'm Muhammad Zakriya
+          Hi, I&apos;m Muhammad Zakriya
         </motion.h2>
         <motion.p 
           initial={{ opacity: 0, y: 20 }} 
